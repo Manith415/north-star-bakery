@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact | North Star Bakery</title>
+<link rel="stylesheet" href="styles.css">
+  <script src="scripts.js" defer></script>
+</head>
+<body class="contact-page">
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <header class="site-header">
+    <a href="index.html" class="brand"><img src="media/bakery-logo_c.png" width="160" alt="North Star Bakery logo with a bread icon">
+    </a><nav aria-label="Main navigation">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" aria-current="page">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content" tabindex="-1" class="container">
+    <div class="page-intro">
+<h1>Contact and Preorders</h1>
+    </div>
+<div class="contact-layout">
+<section class="card">
+      <h2>Location and Hours</h2>
+      <address>North Star Bakery<br>
+        123 Main Street<br>Springfield</address>
+      <p>Tuesday-Saturday: 7 a.m.-5 p.m.<br>
+        Sunday: 8 a.m.-1 p.m.<br>Monday: Closed.</p>
+    </section>
+
+    <section class="card">
+      <h2>Inquiry and Preorder Form</h2>
+      <p>Ask a question or tell us what you would like to pick up.
+        Fields marked required must be completed.</p>
+      <p>This practice form does not send requests to a bakery.</p>
+      <section class="saved-favorites" id="contact-favorites" aria-labelledby="saved-heading" hidden>
+        <h3 id="saved-heading">Your Saved Favorites (<span id="favorite-count">0</span>)</h3>
+        <p id="favorites-empty">No saved favorites yet. <a href="products.html">Browse and save items</a>.</p>
+        <ul id="favorite-list"></ul>
+        <button type="button" id="use-favorites" disabled>Add favorites to request details</button>
+        <p id="favorites-message" role="status"></p>
+      </section>
+      <p id="storage-message" role="status"></p>
+      <p id="form-errors" class="feedback" role="alert"></p>
+      <form id="inquiry-form" action="contact.html" method="get">
+        <fieldset>
+          <legend>Your Information</legend>
+          <p>
+            <label for="customer-name">Name (required)</label><br>
+            <input type="text" id="customer-name" aria-describedby="customer-name-error" name="customer-name" autocomplete="name" minlength="2" maxlength="60" required>
+          <span id="customer-name-error" class="field-error" aria-live="polite" hidden></span>
+          </p>
+          <p>
+            <label for="email">Email (required)</label><br>
+            <input type="email" id="email" aria-describedby="email-error" name="email" autocomplete="email" maxlength="254" required>
+          <span id="email-error" class="field-error" aria-live="polite" hidden></span>
+          </p>
+        </fieldset>
+
+        <fieldset>
+          <legend>Request Details</legend>
+          <p>
+            <label for="request-type">Request type (required)</label><br>
+            <select id="request-type" aria-describedby="request-type-error" name="request-type" required>
+              <option value="">Choose a request type</option>
+              <option value="preorder">Preorder</option>
+              <option value="question">General question</option>
+            </select>
+          <span id="request-type-error" class="field-error" aria-live="polite" hidden></span>
+          </p>
+          <p>
+            <label for="pickup-date">Pickup date (if preordering)</label><br>
+            <input type="date" id="pickup-date" aria-describedby="pickup-date-error" name="pickup-date">
+          <span id="pickup-date-error" class="field-error" aria-live="polite" hidden></span>
+          </p>
+          <p>
+            <label for="details">Item details or question (required)</label>
+            <br>
+            <textarea id="details" aria-describedby="details-error" name="details" rows="4" cols="30" minlength="10" maxlength="500" required></textarea>
+          <span id="details-error" class="field-error" aria-live="polite" hidden></span>
+          </p>
+          <p>
+            <label for="allergies">Allergy notes (optional)</label><br>
+            <textarea id="allergies" aria-describedby="allergies-error" name="allergies" maxlength="300" rows="3" cols="30"></textarea>
+          <span id="allergies-error" class="field-error" aria-live="polite" hidden></span>
+          </p>
+        </fieldset>
+        <p><button type="submit">Check request</button></p>
+      </form>
+      <p id="form-status" class="feedback" role="status" tabindex="-1"></p>
+    </section>
+  </div></main>
+
+  <footer class="site-footer">
+    <p>© 2026 North Star Bakery</p>
+  </footer>
+</body>
+</html>

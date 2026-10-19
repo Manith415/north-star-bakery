@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Products | North Star Bakery</title>
+<link rel="stylesheet" href="styles.css">
+  <script src="scripts.js" defer></script>
+</head>
+<body class="products-page">
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <header class="site-header">
+    <a href="index.html" class="brand"><img src="media/bakery-logo_c.png" width="160" alt="North Star Bakery logo with a bread icon">
+    </a><nav aria-label="Main navigation">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html" aria-current="page">Products</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content" tabindex="-1" class="container">
+    <div class="page-intro">
+<h1>Our Baked Goods</h1>
+    <p>Choose something for breakfast, a family meal, or a celebration.
+      Selections may change from day to day.</p>
+
+    </div>
+<section class="card favorites-feature" aria-labelledby="favorites-heading">
+      <h2 id="favorites-heading">Save Your Bakery Favorites</h2>
+      <p>Save items you like, then bring your list to the preorder form. Favorites and your category choice stay in this browser for your next visit.</p>
+      <div id="favorites-controls" hidden>
+        <div class="filter-row">
+          <label for="category-filter">Browse a category</label>
+          <select id="category-filter">
+            <option value="all">All categories</option>
+            <option value="breads">Breads</option>
+            <option value="pastries">Pastries</option>
+            <option value="cakes">Cakes</option>
+          </select>
+          <p id="filter-result" role="status"></p>
+        </div>
+        <div id="favorite-products" class="favorite-products"></div>
+        <p id="feature-message" class="feedback" role="status"></p>
+        <div class="saved-favorites">
+          <h3>Your Saved Favorites (<span id="favorite-count">0</span>)</h3>
+          <p id="favorites-empty">No favorites yet. Choose Save favorite on an item above.</p>
+          <ul id="favorite-list"></ul>
+          <div class="button-row">
+            <a href="contact.html" class="button">Use favorites in a preorder inquiry</a>
+            <button type="button" id="clear-favorites" class="secondary-button" disabled>Clear favorites</button>
+          </div>
+        </div>
+      </div>
+      <noscript><p>Enable JavaScript to save favorites. You can still browse the products below and use the contact form.</p></noscript>
+      <p id="storage-message" role="status"></p>
+    </section>
+<div class="product-list">
+<section class="card">
+      <h2>Breads</h2>
+      <p>Our loaves are made for toast, sandwiches, and sharing.
+        Bread prices range from $6 to $10 per loaf.</p>
+      <img src="media/bakery-bread_c.png" width="320" alt="Round bread loaves arranged in a glass bakery display">
+      <figure>
+        <img src="media/bakery-signature-loaf_c.png" width="320" alt="Oval loaf dusted with flour on a striped cloth">
+        <figcaption>Our Signature Loaf is this week's feature: $8.
+        </figcaption>
+      </figure>
+    </section>
+
+    <section class="card">
+      <h2>Pastries</h2>
+      <p>Enjoy cookies, muffins, and other pastries with your morning
+        coffee. Individual treats range from $3 to $6.</p>
+    </section>
+
+    <section class="card">
+      <h2>Cakes</h2>
+      <p>Our cakes are a sweet addition to birthdays and gatherings.
+        Whole cakes range from $25 to $45, depending on the size.</p>
+    </section>
+
+    </div>
+<p>Use our <a href="contact.html">inquiry and preorder form</a>
+      to ask about items, pickup dates, or allergy concerns.
+      A preorder request needs bakery confirmation.</p>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 North Star Bakery</p>
+  </footer>
+</body>
+</html>

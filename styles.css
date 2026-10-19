@@ -1,0 +1,209 @@
+/* Shared styles for all four North Star Bakery pages. */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: #FFF8F0;
+  color: #2F2A26;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  color: #6B3E26;
+  font-family: Georgia, serif;
+  line-height: 1.2;
+}
+
+h1 { font-size: 2rem; margin: 0 0 1rem; }
+h2 { font-size: 1.5rem; margin: 0 0 0.75rem; }
+h3 { font-size: 1.15rem; margin-bottom: 0.5rem; }
+p { margin: 0 0 1rem; }
+a { color: #6B3E26; text-underline-offset: 0.2em; }
+a:hover { color: #2F2A26; }
+a:focus, button:focus, input:focus, select:focus, textarea:focus {
+  outline: 3px solid #6B3E26;
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: absolute;
+  left: -10000px;
+  padding: 0.75rem;
+  background-color: #FFF8F0;
+  color: #6B3E26;
+  z-index: 10;
+}
+.skip-link:focus { left: 0.75rem; top: 0.75rem; }
+
+.site-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem;
+  background-color: #6B3E26;
+  color: #FFF8F0;
+}
+.brand { display: block; max-width: 100%; }
+.brand img { display: block; width: 160px; height: auto; }
+.brand:focus { outline-color: #FFF8F0; }
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.nav-links a {
+  display: block;
+  padding: 0.6rem 0.85rem;
+  border-radius: 4px;
+  color: #FFF8F0;
+}
+.nav-links a:hover, .nav-links a:focus, .nav-links a[aria-current="page"] {
+  background-color: #D88C5A;
+  color: #2F2A26;
+}
+.nav-links a:focus { outline-color: #FFF8F0; }
+.nav-links a[aria-current="page"] { font-weight: bold; }
+
+.container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem;
+}
+.page-intro { margin-bottom: 1.5rem; }
+.card {
+  min-width: 0;
+  padding: 1.25rem;
+  margin-bottom: 1.25rem;
+  border: 1px solid #D88C5A;
+  border-radius: 4px;
+}
+.card > :last-child { margin-bottom: 0; }
+.product-list, .contact-layout, .home-details, .about-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+.product-list > .card, .contact-layout > .card,
+.home-details > .card, .about-details > .card { margin-bottom: 0; }
+img { max-width: 100%; height: auto; }
+picture, picture img { display: block; }
+.home-feature picture { margin: 1rem 0; }
+.home-feature picture img { width: 100%; max-width: 640px; }
+figure { margin: 1rem 0 0; }
+figcaption { font-size: 0.95rem; margin-top: 0.5rem; }
+address { font-style: normal; margin-bottom: 1rem; }
+audio { display: block; width: 100%; max-width: 100%; }
+
+fieldset {
+  min-width: 0;
+  padding: 1rem;
+  border: 1px solid #6B3E26;
+  margin: 0 0 1rem;
+}
+legend, label { font-weight: bold; }
+legend { padding: 0 0.4rem; }
+input, select, textarea {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 44px;
+  margin-top: 0.35rem;
+  padding: 0.6rem;
+  border: 1px solid #6B3E26;
+  border-radius: 3px;
+  background-color: #FFF8F0;
+  color: #2F2A26;
+  font-family: inherit;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+textarea { resize: vertical; }
+label + br { display: none; }
+button, .button {
+  display: inline-block;
+  max-width: 100%;
+  padding: 0.65rem 1rem;
+  border: 2px solid #6B3E26;
+  border-radius: 4px;
+  background-color: #6B3E26;
+  color: #FFF8F0;
+  font-family: Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+}
+button:hover, .button:hover, .button:focus {
+  background-color: #D88C5A;
+  color: #2F2A26;
+}
+.site-footer {
+  padding: 1.25rem;
+  background-color: #6B3E26;
+  color: #FFF8F0;
+  text-align: center;
+}
+.site-footer p { margin: 0; }
+
+/* Larger screens use rows after the mobile layout has enough room. */
+@media (min-width: 768px) {
+  .site-header {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1.25rem 2rem;
+  }
+  .container { padding: 2rem; }
+  h1 { font-size: 2.4rem; }
+  .product-list, .contact-layout, .home-details, .about-details {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  .product-list > .card, .home-details > .card, .about-details > .card {
+    flex: 1 1 0;
+  }
+  .contact-layout > .card:first-child { flex: 1 1 0; }
+  .contact-layout > .card:last-child { flex: 2 1 0; }
+}
+
+/* Touchstone 4 additions keep the existing colors and typefaces. */
+[hidden] { display: none !important; }
+.favorites-feature { margin-bottom: 1.5rem; }
+.filter-row { margin-bottom: 1rem; }
+.filter-row select { max-width: 22rem; }
+.favorite-products { display: flex; flex-direction: column; gap: 1rem; }
+.favorite-product {
+  min-width: 0;
+  flex: 1 1 0;
+  border: 1px solid #D88C5A;
+  border-radius: 4px;
+  padding: 1rem;
+}
+.favorite-product h3 { margin-top: 0; }
+.product-price { font-weight: bold; }
+.saved-favorites { border-top: 2px solid #D88C5A; margin-top: 1rem; padding-top: 1rem; }
+.saved-favorites h3 { margin-top: 0; }
+.button-row { display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center; }
+.secondary-button { background-color: #FFF8F0; color: #6B3E26; }
+button:disabled { cursor: default; opacity: 0.65; }
+button:disabled:hover { background-color: #6B3E26; color: #FFF8F0; }
+.secondary-button:disabled:hover { background-color: #FFF8F0; color: #6B3E26; }
+.feedback:not(:empty), #storage-message:not(:empty) { margin-top: 1rem; font-weight: bold; }
+.field-error { display: block; margin-top: 0.4rem; color: #6B3E26; font-weight: bold; font-size: 0.95rem; }
+[aria-invalid="true"] { border-width: 3px; }
+#favorite-list { padding-left: 1.4rem; }
+#favorite-list:empty, .feedback:empty, #storage-message:empty { display: none; }
+@media (min-width: 768px) {
+  .favorite-products { flex-direction: row; }
+}
